@@ -91,7 +91,7 @@ const SideNav = ({ children }) => {
                 <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none" />
                 <circle cx="12" cy="12" r="3" fill="currentColor" />
               </svg> */}
-              <img src="logos.png" alt="" srcset="" />
+              <img src="/logos.png" alt="" srcset="" />
               
             </div>
             <div>

@@ -28,7 +28,10 @@ axiosClient.interceptors.response.use(
     if (error.response?.status === 401) {
       localStorage.removeItem("start");
       
-      window.location.href = "/auth";
+      // ✅ Only redirect if user is NOT already on /auth page
+      if (window.location.pathname !== "/auth") {
+        window.location.href = "/auth";
+      }
     }
     return Promise.reject(error);
   }

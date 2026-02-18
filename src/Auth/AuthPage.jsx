@@ -31,82 +31,64 @@ const setLocal=(key,value)=>{
   localStorage.setItem(key,value);
 }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if(isLogin){
-      if (!loginformData.email || !loginformData.email) return;
+const handleSubmit = async (e) => {
+  e.preventDefault(); // ✅ This is already there, good
+  e.stopPropagation();  
+  if (isLogin) {
+    if (!loginformData.email || !loginformData.password) return;
+setIsLoading(true);
+try {
+  const response = await loginApi(loginformData);
+  if (response.status === 200) {
+    toast.success(response.data['message']);
+    setLocal("start", response.data['token']);
+    const decoded = jwtDecode(response.data['token']);
+    dispatch(setLoginSuccess({
+      isAuthenticated: true,
+      user: decoded.user_id,
+      type: decoded.role_id,
+      name: decoded.name,
+      email: decoded.email,
+    }));
+    navigate('/dashboard');
+  } else {
+    toast.error(response.data['message']);
+  }
+} catch (error) {
+  // ❌ Removed e.preventDefault() and e.stopPropagation() — `e` doesn't exist here
+  // ❌ Removed `message` — it was undefined, causing a crash which refreshed the page
+  console.log(error);
+  const message = error?.response?.data?.message || "Invalid email or password"; // ✅ Define it here
+  toast.error(message); // ✅ Now works without crashing
+} finally {
+  setIsLoading(false);
+}
+
+  } else {
+    if (!signupformData.email || !signupformData.mobile || !signupformData.password || !signupformData.name) return;
     setIsLoading(true);
     try {
-      const response = await loginApi(loginformData);
-    if(response.status===200){
-      setIsLoading(false);
-      toast.success(response.data['message']);
-      setLocal("start",response.data['token']);
-      const decoded = jwtDecode(response.data['token']);
-      console.log(decoded);
-      
-      dispatch(setLoginSuccess(
-        {
-          isAuthenticated: true,
-          user: decoded.user_id,
-          type: decoded.role_id,
-          name: decoded.name,
-          email: decoded.email,
-        }
-      ));
-      navigate('/dashboard');
-     }else{
-      setIsLoading(false);
-      console.log(response.data['message']);
-      
-      toast.error(response.data['message']);
-     }
-
-    
-  } catch (error) {
-      const message =
-        error?.response?.data?.message ||
-        "Invalid email or password";
-
-      toast.error(message);
-    } finally {
-      setIsLoading(false);
-    }
-    }
-    
-    else{
-      if (!signupformData.email || !signupformData.mobile || !signupformData.password || !signupformData.name) return;
-    setIsLoading(true);
-    try {
-      console.log(signupformData);
-      
       const response = await signupApi(signupformData);
-    if(response.status===200){
-
-      setIsLoading(false);
-      toast.success(response.data['message']);
-      setLocal("start",response.data['token']);
-      // navigate('/dashboard')
+      if (response.status === 200) {
+        toast.success(response.data['message']);
+        setLocal("start", response.data['token']);
         const decoded = jwtDecode(response.data['token']);
-      dispatch(setLoginSuccess(
-        {
+        dispatch(setLoginSuccess({
           isAuthenticated: true,
           user: decoded.user_id,
           type: decoded.role_id,
           name: decoded.name,
           email: decoded.email,
-        }
-      ));
-    }
+        }));
+        navigate('/dashboard'); // ✅ Add this — was missing!
+      }
     } catch (error) {
-       setIsLoading(false);
-      toast.error(error.customMessage);
+      toast.error(error?.response?.data?.message || "Signup failed");
+    } finally {
+      setIsLoading(false); // ✅ Move here so it always resets
     }
-    }
-    
-    
-    
-  };
+  }
+};
 
   const handleChange = (e) => {
     setLoginFormData({
@@ -129,10 +111,11 @@ const setLocal=(key,value)=>{
     }, 300);
   };
 
-  useEffect(()=>{
-      console.log("email"+JSON.stringify(isAuthenticated));
-
-  },[isAuthenticated]);
+useEffect(() => {
+  if (isAuthenticated?.isAuthenticated) {
+    navigate('/dashboard');
+  }
+}, [isAuthenticated]);
 
 
   return (
