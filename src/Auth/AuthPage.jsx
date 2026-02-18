@@ -278,7 +278,7 @@ useEffect(() => {
                 </label>
 
                 <a
-                  href="#"
+                  href="/forgetpassword"
                   className="text-sm text-blue-400 hover:text-blue-300 transition-all duration-200 hover:underline"
                 >
                   Forgot password?
@@ -432,7 +432,7 @@ useEffect(() => {
              
 
                 <a
-                  href="#"
+                  href="/forgetpassword"
                   className="text-sm text-blue-400 hover:text-blue-300 transition-all duration-200 hover:underline"
                 >
                   Forgot password?

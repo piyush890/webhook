@@ -22,6 +22,7 @@ import Events from './Events/Events'
 import { setLoginSuccess } from './Redux/Auth/AuthReducer'
 import { checkAuth } from './Helper/helper'
 import Refund from './Reports/Refund'
+import ForgotPassword from './Auth/ForgotPassword'
 
 
 
@@ -97,6 +98,7 @@ function App() {
          <Route path='/about' element ={<About/>}/>
          <Route path='/contact' element ={<Contact/>}/>
          <Route path='/security' element ={<SecurityPage/>}/>
+         <Route path='/forgetpassword' element ={<ForgotPassword/>}/>
 
     </Routes>
          </BrowserRouter>
