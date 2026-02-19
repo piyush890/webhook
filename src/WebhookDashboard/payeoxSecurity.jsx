@@ -1,5 +1,6 @@
 import React from 'react';
 import { Shield, Lock, Key, Database, Code, FileText, Users, Server, HardDrive, CheckCircle, AlertTriangle, Clock, Mail, FileCheck } from 'lucide-react';
+import HeaderPart from './Header';
 
 export default function SecurityPage() {
   const securityFeatures = [
@@ -82,10 +83,28 @@ export default function SecurityPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white">
-      {/* Hero Section */}
+    <div className="min-h-screen bg-linear-to-b from-slate-950 via-slate-900 to-slate-950 text-white">
+       <header className="border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+          <a href='/' className="flex items-center space-x-2">
+             <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg shadow-white/20">
+          
+              <img src="/logos.png" alt="" srcset="" />
+              
+            </div>
+            <span className="text-xl font-semibold">Payeox</span>
+          </a>
+         
+          <div className="flex items-center space-x-4">
+            <a href="/auth" className="text-sm text-gray-400 hover:text-white transition-colors">Sign In</a>
+            <a href="/auth" className="bg-white text-black px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors">
+              Get Started
+            </a>
+          </div>
+        </div>
+      </header>
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-purple-600/10"></div>
+        <div className="absolute inset-0 bg-linear-to-br from-blue-600/10 via-transparent to-purple-600/10"></div>
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
@@ -252,14 +271,11 @@ export default function SecurityPage() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-xl font-semibold hover:bg-blue-50 transition-all hover:shadow-xl hover:scale-105">
-                <Mail className="w-5 h-5" />
-                Contact Security Team
-              </button>
-              <button className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-xl font-semibold hover:bg-white/20 transition-all hover:shadow-xl">
+             
+              <a href='/privacyPolicy' className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-xl font-semibold hover:bg-white/20 transition-all hover:shadow-xl">
                 <FileText className="w-5 h-5" />
                 Read Privacy Policy
-              </button>
+              </a>
             </div>
           </div>
         </div>

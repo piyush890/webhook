@@ -71,8 +71,9 @@ try {
       const response = await signupApi(signupformData);
       if (response.status === 200) {
         toast.success(response.data['message']);
-        setLocal("start", response.data['token']);
-        const decoded = jwtDecode(response.data['token']);
+        setLocal("start", response.data['access_token']);
+        const decoded = jwtDecode(response.data['access_token']);
+        console.log(decoded);
         dispatch(setLoginSuccess({
           isAuthenticated: true,
           user: decoded.user_id,
@@ -83,6 +84,7 @@ try {
         navigate('/dashboard'); // ✅ Add this — was missing!
       }
     } catch (error) {
+      console.log(error);
       toast.error(error?.response?.data?.message || "Signup failed");
     } finally {
       setIsLoading(false); // ✅ Move here so it always resets

@@ -26,7 +26,25 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0f] text-gray-100 font-sans">
-      {/* Ambient Background */}
+             <header className="border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+          <a href='/' className="flex items-center space-x-2">
+             <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg shadow-white/20">
+          
+              <img src="/logos.png" alt="" srcset="" />
+              
+            </div>
+            <span className="text-xl font-semibold">Payeox</span>
+          </a>
+         
+          <div className="flex items-center space-x-4">
+            <a href="/auth" className="text-sm text-gray-400 hover:text-white transition-colors">Sign In</a>
+            <a href="/auth" className="bg-white text-black px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors">
+              Get Started
+            </a>
+          </div>
+        </div>
+      </header>
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-emerald-500/5 rounded-full blur-[120px] animate-pulse"></div>
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '1s' }}></div>

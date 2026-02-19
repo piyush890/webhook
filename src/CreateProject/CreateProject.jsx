@@ -239,9 +239,7 @@ export default function CreateProject() {
         </div>
 
         {/* Section 5: Security */}
-        <div className="mb-12">
-          <img src="webhook.jpeg" alt="" srcset="" />
-        </div>
+        
 
         {/* Primary Action */}
         <div>

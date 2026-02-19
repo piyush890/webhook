@@ -6,23 +6,20 @@ export default function TermsAndConditions() {
       {/* Header */}
       <header className="border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-              <span className="text-black font-bold">P</span>
+          <a href='/' className="flex items-center space-x-2">
+             <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg shadow-white/20">
+          
+              <img src="/logos.png" alt="" srcset="" />
+              
             </div>
             <span className="text-xl font-semibold">Payeox</span>
-          </div>
-          <nav className="hidden md:flex space-x-8 text-sm text-gray-400">
-            <a href="#" className="hover:text-white transition-colors">Features</a>
-            <a href="#" className="hover:text-white transition-colors">How it Works</a>
-            <a href="#" className="hover:text-white transition-colors">Pricing</a>
-            <a href="#" className="hover:text-white transition-colors">Security</a>
-          </nav>
+          </a>
+         
           <div className="flex items-center space-x-4">
-            <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Sign In</a>
-            <button className="bg-white text-black px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors">
+            <a href="/auth" className="text-sm text-gray-400 hover:text-white transition-colors">Sign In</a>
+            <a href="/auth" className="bg-white text-black px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors">
               Get Started
-            </button>
+            </a>
           </div>
         </div>
       </header>
@@ -32,7 +29,7 @@ export default function TermsAndConditions() {
         {/* Title Section */}
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Terms and Conditions</h1>
-          <p className="text-gray-400">Last Updated: February 11, 2026</p>
+          <p className="text-gray-400">Last Updated: February 19, 2026</p>
         </div>
 
         {/* Introduction */}

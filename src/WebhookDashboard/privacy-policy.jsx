@@ -128,29 +128,49 @@ export default function PrivacyPolicy() {
       title: '11. Contact Us',
       content: 'If you have any questions about this Privacy Policy, you can contact us at:',
       items: [
-        'Email: support@[yourdomain].com',
-        'Website: https://[yourdomain].com'
+        'Email: support@payeox.com',
+        'Website: https://payeox.com'
       ],
-      footer: '[Your App Name]\n[Company Name – if applicable]\nIndia'
+      footer: 'Payeox\n Vellaration Technologies Pvt LTD. – if applicable]\nIndia'
     }
   ];
 
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Header */}
-      <header className="bg-white text-black py-6 px-4 sticky top-0 z-50 border-b-2 border-white">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-3xl font-bold tracking-tight">Privacy Policy</h1>
-          <p className="text-gray-600 mt-2">Last Updated: [Date]</p>
+        <header className="border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+          <a href='/' className="flex items-center space-x-2">
+             <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg shadow-white/20">
+          
+              <img src="/logos.png" alt="" srcset="" />
+              
+            </div>
+            <span className="text-xl font-semibold">Payeox</span>
+          </a>
+         
+          <div className="flex items-center space-x-4">
+            <a href="/auth" className="text-sm text-gray-400 hover:text-white transition-colors">Sign In</a>
+            <a href="/auth" className="bg-white text-black px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors">
+              Get Started
+            </a>
+          </div>
         </div>
       </header>
+
+      <div className=" text-white py-6 px-4 ">
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-3xl font-bold tracking-tight">Privacy Policy</h1>
+          <p className="text-gray-600 mt-2">Last Updated: February 19, 2026</p>
+        </div>
+      </div>
 
       {/* Main Content */}
       <main className="max-w-6xl mx-auto px-4 py-12">
         {/* Introduction */}
         <div className="mb-12 pb-8 border-b-2 border-white">
           <p className="text-lg leading-relaxed text-gray-300">
-            This Privacy Policy explains how <span className="text-white font-semibold">[Your App Name]</span> ("we," "our," or "us") collects, uses, stores, and protects information when you use our platform, website, and services ("Service").
+            This Privacy Policy explains how <span className="text-white font-semibold">Payeox</span> ("we," "our," or "us") collects, uses, stores, and protects information when you use our platform, website, and services ("Service").
           </p>
           <p className="text-lg leading-relaxed text-gray-300 mt-4">
             By accessing or using our Service, you agree to the collection and use of information in accordance with this Privacy Policy.
@@ -283,12 +303,9 @@ export default function PrivacyPolicy() {
       {/* Footer */}
       <footer className="bg-white text-black py-8 px-4 mt-16 border-t-2 border-white">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="mb-4 text-lg">Questions about our privacy practices?</p>
-          <button className="bg-black text-white px-6 py-3 font-bold hover:bg-gray-800 transition-colors duration-200 border-2 border-black">
-            Contact Privacy Team
-          </button>
+         
           <p className="mt-6 text-sm text-gray-600">
-            © 2026 [Your App Name]. All rights reserved.
+            © 2026 Payeox. All rights reserved.
           </p>
         </div>
       </footer>

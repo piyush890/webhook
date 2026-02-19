@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Shield, Zap, BarChart3, Lock, Eye, Link2, CheckCircle2, ArrowRight, Sparkles, Globe, Users, Target } from 'lucide-react';
+import HeaderPart from './Header';
 
 export default function About() {
   const [scrollY, setScrollY] = useState(0);
@@ -85,6 +86,25 @@ export default function About() {
   return (
     <div className="min-h-screen bg-[#0a0a0f] text-white font-sans overflow-x-hidden">
       {/* Animated Grid Background */}
+       <header className="border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+          <a href='/' className="flex items-center space-x-2">
+             <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg shadow-white/20">
+          
+              <img src="/logos.png" alt="" srcset="" />
+              
+            </div>
+            <span className="text-xl font-semibold">Payeox</span>
+          </a>
+         
+          <div className="flex items-center space-x-4">
+            <a href="/auth" className="text-sm text-gray-400 hover:text-white transition-colors">Sign In</a>
+            <a href="/auth" className="bg-white text-black px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors">
+              Get Started
+            </a>
+          </div>
+        </div>
+      </header>
       <div className="fixed inset-0 opacity-20 pointer-events-none">
         <div className="absolute inset-0" style={{
           backgroundImage: `
@@ -367,19 +387,12 @@ export default function About() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="group px-8 py-4 bg-gradient-to-r from-indigo-600 to-violet-600 rounded-xl font-semibold text-lg hover:shadow-xl hover:shadow-indigo-500/50 transition-all duration-300 hover:scale-105 flex items-center gap-2">
+              <a href="/auth" className="group px-8 py-4 bg-gradient-to-r from-indigo-600 to-violet-600 rounded-xl font-semibold text-lg hover:shadow-xl hover:shadow-indigo-500/50 transition-all duration-300 hover:scale-105 flex items-center gap-2">
                 Get Started Free
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-              
-              <button className="px-8 py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl font-semibold text-lg hover:bg-gray-800 hover:border-gray-600 transition-all duration-300">
-                Schedule a Demo
-              </button>
+              </a>
             </div>
 
-            <p className="text-gray-500 text-sm mt-8">
-              No credit card required • 14-day free trial • Cancel anytime
-            </p>
           </div>
         </section>
       </div>

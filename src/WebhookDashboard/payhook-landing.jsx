@@ -418,9 +418,8 @@ export default function PayeoxLanding() {
             <div>
               <h4 className="font-semibold text-white mb-4">Product</h4>
               <ul className="space-y-3">
-                <li><a href="#" className="text-sm text-gray-500 hover:text-white transition-colors">Features</a></li>
-                <li><a href="#" className="text-sm text-gray-500 hover:text-white transition-colors">Pricing</a></li>
-                <li><a href="#" className="text-sm text-gray-500 hover:text-white transition-colors">Documentation</a></li>
+                <li><a href="#features" className="text-sm text-gray-500 hover:text-white transition-colors">Features</a></li>
+                <li><a href="#pricing" className="text-sm text-gray-500 hover:text-white transition-colors">Pricing</a></li>
               </ul>
             </div>
             <div>
@@ -435,7 +434,7 @@ export default function PayeoxLanding() {
               <ul className="space-y-3">
                 <li><a href="/privacyPolicy" className="text-sm text-gray-500 hover:text-white transition-colors">Privacy Policy</a></li>
                 <li><a href="/termsAndConditions" className="text-sm text-gray-500 hover:text-white transition-colors">Terms of Service</a></li>
-                <li><a href="/security" className="text-sm text-gray-500 hover:text-white transition-colors">Security</a></li>
+                {/* <li><a href="/security" className="text-sm text-gray-500 hover:text-white transition-colors">Security</a></li> */}
               </ul>
             </div>
           </div>
