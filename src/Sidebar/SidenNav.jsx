@@ -88,9 +88,9 @@ const SideNav = ({ children }) => {
               {sidebarOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
 
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg shadow-white/20">
+            <a href="/" className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg shadow-white/20">
               <img src="/logos.png" alt="" />
-            </div>
+            </a>
             <div>
               <h1 className="text-2xl font-bold text-white">Payeox</h1>
               <p className="text-xs text-gray-400">Payment Dashboard</p>
