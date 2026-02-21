@@ -19,19 +19,8 @@ const downloadExcel = (data) => {
   if (!data || data.length === 0) return;
 
   // Format your data cleanly
-  const formattedData = data.map((payment) => ({
-    Time: payment.payment_time,
-    Order_ID: payment.order_id,
-    Payment_ID: payment.payment_id,
-    Amount: payment.payment_amount,
-    Status: payment.payment_status,
-    Provider: payment.gateway_id === 1 ? "Cashfree" : "Unknown",
-    Method: payment.payment_group,
-    Service_Charge: payment.service_charge,
-    Service_Tax: payment.service_tax,
-  }));
 
-  const worksheet = XLSX.utils.json_to_sheet(formattedData);
+  const worksheet = XLSX.utils.json_to_sheet(data);
   const workbook = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(workbook, worksheet, "Payments");
 

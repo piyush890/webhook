@@ -27,6 +27,9 @@ const Payment = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(25);
 
+
+ 
+
   /* -------------------- Copy Payment ID -------------------- */
   const copyPaymentId = useCallback((paymentId) => {
     if (!paymentId) return;
@@ -92,6 +95,18 @@ const Payment = () => {
     return pages;
   };
 
+     const formattedData = filteredData.map((payment) => ({
+      Time: payment.payment_time,
+      Order_ID: payment.order_id,
+      Payment_ID: payment.payment_id,
+      Amount: payment.payment_amount,
+      Status: payment.payment_status,
+      Provider: payment.gateway_id === 1 ? "Cashfree" : "Unknown",
+      Method: payment.payment_group,
+      Service_Charge: payment.service_charge,
+      Service_Tax: payment.service_tax,
+    }));
+  
   return (
     <div className="min-h-screen">
       <SideNav>
@@ -136,7 +151,7 @@ const Payment = () => {
             <Database
               className="cursor-pointer"
               color="white"
-              onClick={() => downloadExcel(filteredData)}
+              onClick={() => downloadExcel(formattedData)}
             />
           </div>
 

@@ -88,6 +88,18 @@ const Refund = () => {
     return pages;
   };
 
+       const formattedData = filteredRefunds.map((payment) => ({
+      Time: convertDate(payment.created_at),
+      Order_ID: payment.order_id,
+      Payment_ID: payment.payment_id,
+      Refund_ID: payment.refund_id,
+      Amount: payment.amount,
+      Status: payment.refund_status,
+      Provider: payment.gateway_id === 1 ? "Cashfree" : "Unknown",
+      Method: payment.payment_group,
+      Service_Charge: payment.description,
+    }));
+
   return (
     <div className="min-h-screen">
       <SideNav>
@@ -115,7 +127,7 @@ const Refund = () => {
             <Database
               className="cursor-pointer"
               color="white"
-              onClick={() => downloadExcel(filteredRefunds)}
+              onClick={() => downloadExcel(formattedData)}
             />
           </div>
 
