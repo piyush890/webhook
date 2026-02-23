@@ -23,6 +23,7 @@ import { setLoginSuccess } from './Redux/Auth/AuthReducer'
 import { checkAuth } from './Helper/helper'
 import Refund from './Reports/Refund'
 import ForgotPassword from './Auth/ForgotPassword'
+import Guide from './Guide/Guide'
 
 
 
@@ -77,6 +78,9 @@ function App() {
          }/>
          <Route path='/projects' element ={
           <Projects/>
+          }/>
+         <Route path='/guideme' element ={
+          <Guide/>
           }/>
          <Route path='/technicalLogs' element ={<Technicallogs/>}/>
          <Route path='/alerts' element ={<Alert/>}/>

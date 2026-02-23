@@ -370,13 +370,17 @@ const copyToClipboard = async (text, field) => {
                     </button>
                   </div>
                 ) : (
-                  <input
+                 
+                  <div className='flex flex-col gap-2'>
+                     <input
                     type="text"
                     value={secretKey}
                     onChange={(e) => setSecretKey(e.target.value)}
                     placeholder="Enter your secret key"
                     className="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-2 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   />
+                  <a href="https://" className='text-white text-sm ml-3'>Guide me How to setup ?</a>
+                  </div>
                 )
               }
               <p className="text-xs text-gray-600 mt-1.5">This is only for verify your Payment.</p>
