@@ -64,7 +64,6 @@ export default function PayeoxDashboard() {
         { name: 'Failed', value: txn['failed_count'], color: '#ef4444' },
         { name: 'Processing', value: txn['processing_count'], color: '#f59e0b' }
       ]);
-      console.log(refundData);
       setPaymentMethodData(paymentData);
       setTxnDataPerHour(txnDataPerHour);
       setTxnStatusPerHour(txnDataStatusPerHour);
@@ -85,7 +84,6 @@ const token = localStorage.getItem("start");
   useEffect(() => {
     if (token) {
   const decoded = jwtDecode(token);
-  console.log(decoded);
 }
     getTxnData();
   }, []);

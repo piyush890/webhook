@@ -10,7 +10,12 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card"
 import { setLoginSuccess } from "../Redux/Auth/AuthReducer";
-
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "@/components/ui/dropdown-menu"
 const SideNav = ({ children }) => {
   const dispatch = useDispatch();
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -184,24 +189,40 @@ const SideNav = ({ children }) => {
         </nav>
 
         {/* Sidebar Footer */}
-        <HoverCard openDelay={10} closeDelay={100}>
-          <HoverCardTrigger asChild>
-            <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-white/10 bg-black/70">
-              <div className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 cursor-pointer">
-                <div className="w-8 h-8 bg-gradient-to-br from-purple-900 to-pink-500 rounded-lg flex items-center justify-center text-xs font-bold text-white">
-                  {userProfile.name ? userProfile.name.charAt(0).toUpperCase() : "U"}
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-white">{userProfile.name}</p>
-                  <p className="text-xs text-gray-400">{userProfile.email}</p>
-                </div>
-              </div>
-            </div>
-          </HoverCardTrigger>
-          <HoverCardContent className="flex w-64 flex-col gap-0.5">
-            <a onClick={() => clearData()} href="/">Logout</a>
-          </HoverCardContent>
-        </HoverCard>
+<DropdownMenu>
+  <DropdownMenuTrigger asChild>
+    <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-white/10 bg-black/70">
+      <div className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 cursor-pointer">
+        <div className="w-8 h-8 bg-gradient-to-br from-purple-900 to-pink-500 rounded-lg flex items-center justify-center text-xs font-bold text-white">
+          {userProfile.name
+            ? userProfile.name.charAt(0).toUpperCase()
+            : "U"}
+        </div>
+
+        <div>
+          <p className="text-sm font-semibold text-white">
+            {userProfile.name}
+          </p>
+          <p className="text-xs text-gray-400">
+            {userProfile.email}
+          </p>
+        </div>
+      </div>
+    </div>
+  </DropdownMenuTrigger>
+
+  <DropdownMenuContent side="top" className="w-64">
+    <DropdownMenuItem
+      className="cursor-pointer text-red-500"
+      onClick={() => {
+        clearData()
+        window.location.href = "/"
+      }}
+    >
+      Logout
+    </DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
       </aside>
 
       {/* ================= MAIN CONTENT ================= */}
