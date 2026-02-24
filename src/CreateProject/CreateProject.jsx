@@ -25,6 +25,11 @@ export default function CreateProject() {
       name: 'Cashfree',
       description: 'Receive payment updates from Cashfree Payments',
     },
+    {
+      id: '4',
+      name: 'Paytm',
+      description: 'Receive payment updates from Paytm Payments',
+    },
    
   ];
 
@@ -50,15 +55,6 @@ export default function CreateProject() {
     
   };
 
-  const handleCreateProject = async () => {
-    createProject();
-    setIsCreating(true);
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    const newProjectId = `proj_${Math.random().toString(36).substr(2, 9)}`;
-    setProjectId(newProjectId);
-    setIsCreating(false);
-    setIsCreated(true);
-  };
 
   const getWebhookUrl = (gatewayId) => {
     return `https://api.payeox.com/webhook/${projectId}/${gatewayId}`;
