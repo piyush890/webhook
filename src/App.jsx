@@ -53,7 +53,6 @@ function App() {
    } catch (error) {
     console.error("Error during auth check:", error);
    }
-   console.log(isAuthenticated);
    
   },[])
   return (
