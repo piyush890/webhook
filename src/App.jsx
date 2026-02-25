@@ -24,6 +24,7 @@ import { checkAuth } from './Helper/helper'
 import Refund from './Reports/Refund'
 import ForgotPassword from './Auth/ForgotPassword'
 import Guide from './Guide/Guide'
+import GatewayCards from './Projects/Gatways'
 
 
 
@@ -94,6 +95,11 @@ function App() {
          <Route path='/events' element ={
           <ProtectedRoute>
             <Events/>
+          </ProtectedRoute>
+          }/>
+         <Route path='projects/gateways' element ={
+          <ProtectedRoute>
+            <GatewayCards/>
           </ProtectedRoute>
           }/>
          <Route path='/privacyPolicy' element ={<PrivacyPolicy/>}/>

@@ -135,13 +135,13 @@ const Projects = () => {
 
                   <button
                     onClick={() => {
-                      handleOpenDrawer(projectData)
+                      // handleOpenDrawer(projectData)
+                      navigate(`/projects/gateways`)
 
                     }}
                     className="w-full px-4 py-2.5 bg-white hover:bg-gray-100 text-gray-900 text-sm font-medium rounded-lg transition-colors">
-                    {getStatusInfo(projectData.status).label === 'Connected' ? 'View Settings' :
-                      getStatusInfo(projectData.status).label === 'Not Connected' ? 'Set Up' :
-                        'Fix Setup'}
+                     View
+                 
                   </button>
                 </div>
 
