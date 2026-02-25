@@ -12,3 +12,5 @@ export const dashboardRefundDataApi = (params) =>
   apiRequest("GET", "/dashboards/v1/txnRefundData", params);
 export const dashboardTxnListto5 = (params) =>
   apiRequest("GET", "/dashboards/v1/txns", params);
+export const siteHealthCheck = (params) =>
+  apiRequest("GET", "/dashboards/v1/siteHealthCheck", params);
