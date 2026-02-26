@@ -12,3 +12,6 @@ export const updateProjectApi = (params) =>
 export const getGatewaysApi = (params) =>
   apiRequest("POST", "/project/v1/getAllGateways", params);
 
+export const addGateways = (params) =>
+  apiRequest("POST", "/project/v1/addProjects", params);
+
