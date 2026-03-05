@@ -25,6 +25,7 @@ import Refund from './Reports/Refund'
 import ForgotPassword from './Auth/ForgotPassword'
 import Guide from './Guide/Guide'
 import GatewayCards from './Projects/Gatways'
+import RazorpayPage from './TestingGateway/testingGateway'
 
 
 
@@ -90,6 +91,11 @@ function App() {
          <Route path='/createProject' element ={
           <ProtectedRoute>
             <CreateProject/>
+          </ProtectedRoute>
+          }/>
+         <Route path='/makepay' element ={
+          <ProtectedRoute>
+            <RazorpayPage/>
           </ProtectedRoute>
           }/>
          <Route path='/events' element ={

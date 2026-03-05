@@ -3,7 +3,7 @@ import axios from "axios";
 const DEV = "http://127.0.0.1:8000";
 const PROD = "https://api.payeox.com";
 const axiosClient = axios.create({
-  baseURL: DEV,
+  baseURL: PROD,
   headers: {
     "Content-Type": "application/json",
   },

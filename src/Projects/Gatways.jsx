@@ -48,6 +48,7 @@ export default function GatewayCards() {
   const getAllGateway = (id) => {
     if (id === 1 || id === "1") return "Cashfree";
     if (id === 4 || id === "4") return "Paytm";
+    if (id === 6 || id === "6") return "Razorpay";
     return "Unknown";
   };
 
@@ -158,6 +159,11 @@ export default function GatewayCards() {
     },
     {
       id: "4",
+      name: "Paytm",
+      description: "Receive payment updates from Paytm Payments",
+    },
+    {
+      id: "6",
       name: "Paytm",
       description: "Receive payment updates from Paytm Payments",
     },
